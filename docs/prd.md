@@ -25,6 +25,7 @@ Criar um repositorio de portfolio que mostre conhecimento pratico em C, estrutur
 | RF-07 | Criar interface web para GitHub Pages | TypeScript apresenta as questoes do PDF sem afirmar backend online. |
 | RF-08 | Documentar funcionamento com evidencias | README, guias, screenshots e relatorio de validacao explicam como rodar e comprovar. |
 | RF-09 | Registrar casos de uso | `docs/use-cases.md` conecta as estruturas com situacoes reais. |
+| RF-10 | Manter rastreabilidade de validacao | `docs/testing/use-case-test-matrix.md` liga requisito, codigo, teste, evidencia e limite conhecido. |
 
 ## 4. Requisitos Nao Funcionais
 
@@ -55,3 +56,4 @@ Criar um repositorio de portfolio que mostre conhecimento pratico em C, estrutur
 - [x] GitHub Pages mostra as questoes do PDF em uma aplicacao unica.
 - [x] Skill documental define como manter README, testes e evidencias alinhados ao codigo.
 - [x] Casos de uso explicam onde as estruturas aparecem no dia a dia.
+- [x] Matriz de rastreabilidade conecta PDF, codigo, testes, evidencias e limites.

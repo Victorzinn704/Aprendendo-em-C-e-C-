@@ -181,6 +181,7 @@ web/
 | `docs/decisions.md` | Decisoes tecnicas e alternativas rejeitadas. |
 | `docs/glossary.md` | Glossario de C, redes e estruturas. |
 | `docs/testing/testing-guide.md` | Como compilar, rodar e validar. |
+| `docs/testing/use-case-test-matrix.md` | Matriz de rastreabilidade entre PDF, codigo, testes, evidencias e limites. |
 | `docs/testing/validation-report.md` | Relatorio de validacao local. |
 | `docs/skills/deep-project-documentation/SKILL.md` | Skill documental usada para manter a documentacao profunda e verificavel. |
 

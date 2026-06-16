@@ -17,6 +17,7 @@ Este repositorio foi criado como portfolio para concentrar exercicios de C, estr
 - Auditoria de frontend registrada em `docs/audit/frontend-product-audit-2026-06-16.md`.
 - Casos de uso registrados em `docs/use-cases.md`.
 - Evidencias de teste mapeadas em `docs/testing/evidence.md`.
+- Matriz de rastreabilidade registrada em `docs/testing/use-case-test-matrix.md`.
 - Skill documental registrada em `docs/skills/deep-project-documentation/SKILL.md`.
 - Build local C validado com TinyCC usando `-Wall -Werror`.
 - Auditoria senior registrada em `docs/audit/senior-code-audit-2026-06-15.md`.

@@ -1,5 +1,7 @@
 # Guia De Testes
 
+A matriz completa que liga requisito, codigo, teste, evidencia e limite fica em `docs/testing/use-case-test-matrix.md`.
+
 ## Build C
 
 Crie a pasta `build` antes do primeiro build:
