@@ -18,6 +18,7 @@
 | `frontend/task-manager-component-review.md` | Revisao dos componentes aproveitados do gerenciador de tarefas. |
 | `frontend/ui-quality-metrics.md` | Metricas de UI/UX e responsividade da interface. |
 | `testing/testing-guide.md` | Como compilar e validar. |
+| `testing/use-case-test-matrix.md` | Matriz que liga requisito, caso de uso, codigo, teste, evidencia e limite. |
 | `testing/evidence.md` | Mapa de evidencias textuais e visuais dos testes. |
 | `testing/validation-report.md` | Resultado da validacao local. |
 | `roadmap-cpp-redes.md` | Expansao para C++ e redes. |

@@ -116,3 +116,38 @@ Limite:
 
 - A validacao comprova build C, execucao das demos C e build web.
 - A validacao C++ fica coberta pelo workflow `Quality` em ambiente Ubuntu com `g++`.
+
+## Revalidacao Documental E Web - 2026-06-16
+
+Escopo da revisao: matriz de rastreabilidade, links documentais, build web e higiene de exemplos publicos.
+
+Comandos executados:
+
+```powershell
+git diff --check
+npm ci
+npm run build
+npm audit --audit-level=high
+```
+
+Tambem foi feita validacao de sintaxe dos scripts PowerShell com `PSParser` para:
+
+- `scripts/build-all.ps1`
+- `scripts/run-demos.ps1`
+
+Resultado:
+
+| Area | Resultado |
+| --- | --- |
+| Diff | Sem erro de whitespace. |
+| Higiene publica | Sem ocorrencia de caminho pessoal, token GitHub, chave `sk-*` real, IP remoto especifico ou senha literal nos arquivos versionaveis revisados. |
+| Instalacao web | `npm ci` passou e auditou 25 pacotes sem vulnerabilidades. |
+| Web build | `npm run build` passou com TypeScript e Vite. |
+| Auditoria web | `npm audit --audit-level=high` retornou 0 vulnerabilidades. |
+| Scripts PowerShell | `build-all.ps1` e `run-demos.ps1` passaram no parser. |
+
+Limite desta revalidacao:
+
+- `tcc`, `gcc`, `g++` e `cl` nao estavam disponiveis no PATH desta maquina.
+- Por isso, o build nativo C/C++ nao foi repetido localmente neste ciclo documental.
+- A validacao nativa continua coberta pelas evidencias anteriores e pelo workflow `Quality`, que compila C, roda demos C, compila C++ com `g++` e executa o exemplo de topologia no GitHub Actions.

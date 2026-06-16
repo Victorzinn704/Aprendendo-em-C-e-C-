@@ -6,6 +6,8 @@ Registrar quais evidencias comprovam que o projeto foi compilado, executado e ap
 
 Este documento complementa `docs/testing/validation-report.md`.
 
+A relacao entre cada evidencia, requisito do PDF, arquivo de codigo e limite conhecido fica em `docs/testing/use-case-test-matrix.md`.
+
 ## Evidencias De Terminal
 
 | Evidencia | Arquivo | Como gerar |

@@ -25,6 +25,7 @@ Antes de escrever, ler somente o que for necessario para a tarefa:
 - `docs/decisions.md` para escolhas tecnicas.
 - `docs/glossary.md` para termos.
 - `docs/testing/testing-guide.md` para comandos de validacao.
+- `docs/testing/use-case-test-matrix.md` para ligar requisito, codigo, teste, evidencia e limite.
 - `docs/testing/validation-report.md` para evidencias ja registradas.
 - `src/c/*` e `src/cpp/*` para confirmar comportamento real.
 - `web/src/domain/*` e `web/src/components/*` quando a documentacao envolver GitHub Pages.
@@ -42,6 +43,8 @@ Todo documento novo ou revisado deve responder:
 7. Qual caso de uso do dia a dia ajuda a explicar?
 8. Qual limite ainda existe?
 9. Qual proximo passo faz sentido?
+
+Quando a mudanca criar ou alterar comportamento, atualizar tambem a matriz `docs/testing/use-case-test-matrix.md`.
 
 ## Padrao de README
 
