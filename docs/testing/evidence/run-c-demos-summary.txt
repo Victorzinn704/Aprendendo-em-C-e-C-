@@ -1,0 +1,15 @@
+Demos C - resumo da execucao local
+Data: 2026-06-16
+Comando: .\scripts\run-demos.ps1 -OnlyC
+
+Resultado por exercicio:
+OK  ex01_clinica.exe
+    Fila chamou Joao e Maria primeiro. Pilha desfez Carlos. Lista encontrou e removeu cadastro.
+OK  ex02_suporte_ti.exe
+    Ticket 101 foi atendido primeiro. Log desfez resetou switch. Inventario buscou equipamento.
+OK  ex04_escalonamento.exe
+    Antivirus com prioridade 10 executou antes de navegador e editor.
+OK  ex05_rede_pacotes.exe
+    Pacote 1 saiu primeiro da fila. Pacote 4 foi retransmitido primeiro na pilha de erros.
+
+Limite: execucao local valida estrutura de dados e simulacao. Nao valida rede real.

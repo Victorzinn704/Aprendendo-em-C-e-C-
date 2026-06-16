@@ -1,0 +1,244 @@
+.topology-panel {
+  min-height: 0;
+}
+
+.topology-map {
+  position: relative;
+  min-height: 390px;
+  height: clamp(390px, calc(100vh - 484px), 520px);
+  overflow: hidden;
+  border-radius: 0 0 8px 8px;
+  background:
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    var(--paper-warm);
+  background-size: 38px 38px;
+}
+
+.topology-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.topology-line {
+  fill: none;
+  stroke: var(--route-line);
+  stroke-dasharray: 8 9;
+  stroke-linecap: round;
+  stroke-width: 2.4;
+}
+
+.topology-line[data-active='true'] {
+  stroke: var(--blue);
+  stroke-width: 3.2;
+  animation: route-pulse 1.4s ease-in-out infinite;
+}
+
+.topology-beam {
+  fill: none;
+  stroke: var(--route-beam);
+  stroke-dasharray: 2 16;
+  stroke-linecap: round;
+  stroke-width: 5;
+  animation: route-flow 850ms linear infinite;
+  filter: drop-shadow(0 0 7px rgb(21 90 160 / 0.38));
+}
+
+#route-arrow path {
+  fill: var(--blue);
+  stroke: none;
+}
+
+.network-node {
+  position: absolute;
+  display: flex;
+  width: 112px;
+  height: 74px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--node);
+  box-shadow: var(--shadow-soft);
+  transform: translate(-50%, -50%);
+}
+
+.network-node__icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 7px;
+  background: var(--slate);
+  color: var(--on-slate);
+}
+
+.network-node small {
+  color: var(--ink-muted);
+}
+
+.node-pc {
+  left: 12%;
+  top: 52%;
+}
+
+.node-switch {
+  left: 34%;
+  top: 52%;
+}
+
+.node-router {
+  left: 61%;
+  top: 52%;
+}
+
+.node-dns {
+  left: 74%;
+  top: 24%;
+}
+
+.node-server {
+  left: 86%;
+  top: 52%;
+}
+
+.node-error {
+  left: 74%;
+  top: 80%;
+}
+
+.packet-token {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 3px solid var(--paper);
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--on-slate);
+  box-shadow: 0 14px 32px rgb(21 90 160 / 0.32);
+  transform: translate(-50%, -50%);
+}
+
+.packet-token span {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.packet-token--idle {
+  left: 12%;
+  top: 25%;
+  opacity: 0.56;
+}
+
+.packet-token--pc {
+  left: 12%;
+  top: 52%;
+}
+
+.packet-token--switch {
+  left: 34%;
+  top: 52%;
+}
+
+.packet-token--router {
+  left: 61%;
+  top: 52%;
+}
+
+.packet-token--dns {
+  animation: packet-route-dns 3.25s ease-in-out both;
+}
+
+.packet-token--server {
+  background: var(--green);
+  animation: packet-route-server 3.25s ease-in-out both;
+}
+
+.packet-token--error {
+  background: var(--red);
+  animation: packet-route-error 3.25s ease-in-out both;
+}
+
+@keyframes route-flow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+
+@keyframes route-pulse {
+  0%,
+  100% {
+    stroke-opacity: 0.82;
+  }
+  50% {
+    stroke-opacity: 1;
+  }
+}
+
+@keyframes packet-route-server {
+  0% {
+    left: 12%;
+    top: 52%;
+  }
+  34% {
+    left: 34%;
+    top: 52%;
+  }
+  68% {
+    left: 61%;
+    top: 52%;
+  }
+  100% {
+    left: 86%;
+    top: 52%;
+  }
+}
+
+@keyframes packet-route-dns {
+  0% {
+    left: 12%;
+    top: 52%;
+  }
+  38% {
+    left: 34%;
+    top: 52%;
+  }
+  72% {
+    left: 61%;
+    top: 52%;
+  }
+  100% {
+    left: 74%;
+    top: 24%;
+  }
+}
+
+@keyframes packet-route-error {
+  0% {
+    left: 12%;
+    top: 52%;
+  }
+  38% {
+    left: 34%;
+    top: 52%;
+  }
+  72% {
+    left: 61%;
+    top: 52%;
+  }
+  100% {
+    left: 74%;
+    top: 80%;
+  }
+}

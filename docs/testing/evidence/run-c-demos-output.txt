@@ -1,0 +1,133 @@
+
+=== Exercicio 1 - recepcao por fila ===
+Fila de espera: 4 paciente(s)
+  1. Joao, 25 anos
+  2. Maria, 40 anos
+  3. Carlos, 31 anos
+  4. Ana, 28 anos
+Chamado: Joao
+Chamado: Maria
+Fila de espera: 2 paciente(s)
+  1. Carlos, 31 anos
+  2. Ana, 28 anos
+
+=== Historico com pilha ===
+Historico recente: 3 registro(s)
+  Carlos - Clinica geral
+  Maria - Ortopedia
+  Joao - Cardiologia
+Desfeito: Carlos - Clinica geral
+Historico recente: 2 registro(s)
+  Maria - Ortopedia
+  Joao - Cardiologia
+
+=== Cadastro dinamico com lista encadeada ===
+  Carlos | CPF 333.333.333-33 | Tel. (11) 90000-0003
+  Maria | CPF 222.222.222-22 | Tel. (11) 90000-0002
+  Joao | CPF 111.111.111-11 | Tel. (11) 90000-0001
+Busca por CPF encontrou: Maria
+Cadastro removido: Carlos
+  Maria | CPF 222.222.222-22 | Tel. (11) 90000-0002
+  Joao | CPF 111.111.111-11 | Tel. (11) 90000-0001
+
+=== Respostas tecnicas ===
+  Fila               mantem a ordem real de chegada na recepcao.
+  Pilha              desfaz sempre o ultimo atendimento registrado.
+  Lista              cresce e reduz sem precisar realocar um vetor inteiro.
+
+=== Exercicio 2 - chamados em fila ===
+Chamados pendentes: 3
+  Ticket 101 - Internet caiu
+  Ticket 102 - Impressora nao funciona
+  Ticket 103 - Computador nao liga
+Chamado atendido: Ticket 101
+Chamados pendentes: 2
+  Ticket 102 - Impressora nao funciona
+  Ticket 103 - Computador nao liga
+
+=== Logs de manutencao com pilha ===
+Logs registrados: 3
+  resetou switch
+  alterou IP
+  reiniciou servidor
+Acao desfeita: resetou switch
+Logs registrados: 2
+  alterou IP
+  reiniciou servidor
+
+=== Inventario por lista encadeada ===
+  PAT-003 | computador | secretaria
+  PAT-002 | switch | laboratorio
+  PAT-001 | roteador | sala tecnica
+Busca encontrou: switch em laboratorio
+Equipamento removido: PAT-003
+  PAT-002 | switch | laboratorio
+  PAT-001 | roteador | sala tecnica
+
+=== Respostas tecnicas ===
+  Fila               organiza chamados por chegada, reduzindo disputa de prioridade informal.
+  Pilha              representa rollback da ultima acao tecnica aplicada.
+  Lista              permite inventario dinamico sem tamanho fixo inicial.
+
+=== Exercicio 4 - fila de prioridade da CPU ===
+Processos aguardando CPU: 3
+  PID 201 | antivirus | prioridade 10
+  PID 202 | navegador | prioridade 3
+  PID 203 | editor | prioridade 2
+Primeiro executado: PID 201 | antivirus | prioridade 10
+Processos aguardando CPU: 2
+  PID 202 | navegador | prioridade 3
+  PID 203 | editor | prioridade 2
+
+=== Processos ativos e encerrados ===
+  PID 203 | editor | aguardando
+  PID 202 | navegador | aguardando
+  PID 201 | antivirus | executando
+Estado atualizado: PID 202 agora esta pronto
+PID 201 removido da lista ativa
+  PID 203 | editor | aguardando
+  PID 202 | navegador | pronto
+Historico de encerramento: 1
+  PID 201 | processo concluido
+
+=== Respostas tecnicas ===
+  CPU                a fila organiza processos que aguardam execucao.
+  Prioridade         antivirus executa antes por prioridade 10.
+  Lista ativa        permite consultar, alterar e remover processos em execucao.
+
+=== Exercicio 5 - cenario pratico integrado ===
+Pacotes aguardando transmissao: 4
+  Pacote 1 | 500 KB | 5000 ms estimados
+  Pacote 2 | 300 KB | 3000 ms estimados
+  Pacote 3 | 700 KB | 7000 ms estimados
+  Pacote 4 | 200 KB | 2000 ms estimados
+Pacotes ativos:
+  ID 4 | PC-03 -> Servidor | em transito
+  ID 3 | Notebook -> Roteador | em transito
+  ID 2 | PC-02 -> DNS | em transito
+  ID 1 | PC-01 -> Servidor | em transito
+Transmitido e entregue: pacote 1
+Transmitido com erro: pacote 2
+Pacotes aguardando transmissao: 2
+  Pacote 3 | 700 KB | 7000 ms estimados
+  Pacote 4 | 200 KB | 2000 ms estimados
+Pilha de erros: 1 pacote(s)
+  Pacote 2 | 300 KB
+Pacotes ativos apos transmissao:
+  ID 4 | PC-03 -> Servidor | em transito
+  ID 3 | Notebook -> Roteador | em transito
+  ID 2 | PC-02 -> DNS | em transito
+
+=== Exemplo de retransmissao LIFO ===
+Pilha de erros: 2 pacote(s)
+  Pacote 4 | 200 KB
+  Pacote 2 | 300 KB
+Primeiro retransmitido: pacote 4
+Pilha de erros: 1 pacote(s)
+  Pacote 2 | 300 KB
+
+=== Respostas tecnicas ===
+  Fila               o pacote 1 sai primeiro porque chegou primeiro.
+  Pilha              o pacote 4 retransmite antes porque falhou por ultimo.
+  Lista              guarda pacotes ainda observaveis no caminho da rede.
+  Tempo              estimado com taxa didatica de 100 KB/s.

@@ -1,0 +1,55 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  native-and-web:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install native toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential
+
+      - name: Build C exercises
+        run: |
+          mkdir -p build
+          gcc -Wall -Wextra -Werror src/c/ex01_clinica.c -o build/ex01_clinica
+          gcc -Wall -Wextra -Werror src/c/ex02_suporte_ti.c -o build/ex02_suporte_ti
+          gcc -Wall -Wextra -Werror src/c/ex04_escalonamento.c -o build/ex04_escalonamento
+          gcc -Wall -Wextra -Werror src/c/ex05_rede_pacotes.c -o build/ex05_rede_pacotes
+
+      - name: Run C demos
+        run: |
+          ./build/ex01_clinica
+          ./build/ex02_suporte_ti
+          ./build/ex04_escalonamento
+          ./build/ex05_rede_pacotes
+
+      - name: Build C++ topology demo
+        run: |
+          g++ -std=c++17 -Wall -Wextra -Werror src/cpp/network_topology_lab.cpp -o build/network_topology_lab
+          ./build/network_topology_lab
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install web dependencies
+        working-directory: web
+        run: npm ci
+
+      - name: Build web demo
+        working-directory: web
+        run: npm run build

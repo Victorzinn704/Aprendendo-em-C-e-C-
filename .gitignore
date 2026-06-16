@@ -1,0 +1,11 @@
+build/
+web/node_modules/
+web/dist/
+web/.vite/
+web/tsconfig.tsbuildinfo
+*.exe
+*.o
+*.obj
+*.out
+*.log
+.DS_Store

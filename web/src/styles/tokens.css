@@ -1,0 +1,83 @@
+:root {
+  color-scheme: light;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --bg: #f3f5f2;
+  --ink: #171916;
+  --ink-soft: #4d554f;
+  --ink-muted: #737c76;
+  --paper: #ffffff;
+  --paper-soft: #eef1ee;
+  --paper-warm: #fbf9f2;
+  --topbar: rgb(255 255 255 / 0.96);
+  --panel: rgb(255 255 255 / 0.96);
+  --node: rgb(255 255 255 / 0.96);
+  --grid-line: rgb(23 25 22 / 0.04);
+  --grid-line-soft: rgb(23 25 22 / 0.03);
+  --route-line: rgb(23 25 22 / 0.24);
+  --route-beam: #ffffff;
+  --on-slate: #ffffff;
+  --terminal: #171917;
+  --terminal-deep: #0d0f0d;
+  --terminal-text: #f6f7ef;
+  --terminal-muted: #aeb7b0;
+  --terminal-accent: #9ed6b8;
+  --terminal-border: rgb(255 255 255 / 0.13);
+  --terminal-soft: rgb(255 255 255 / 0.05);
+  --line: #d7ddd7;
+  --line-strong: #aeb9b0;
+  --blue: #155aa0;
+  --blue-soft: #e6f0fa;
+  --green: #16805a;
+  --green-soft: #e5f2eb;
+  --red: #b43a3a;
+  --red-soft: #f7e5e5;
+  --amber: #a26413;
+  --amber-soft: #f8eddb;
+  --slate: #242926;
+  --steel: #52606b;
+  --mono:
+    "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --shadow-soft: 0 10px 28px rgb(23 25 22 / 0.07);
+  --shadow-panel: 0 14px 34px rgb(23 25 22 / 0.08);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0d12;
+  --ink: #f5f7fb;
+  --ink-soft: #c7d0da;
+  --ink-muted: #98a5b3;
+  --paper: #10151c;
+  --paper-soft: #0d1218;
+  --paper-warm: #111922;
+  --topbar: rgb(16 21 28 / 0.96);
+  --panel: rgb(16 21 28 / 0.96);
+  --node: rgb(17 25 34 / 0.98);
+  --grid-line: rgb(245 247 251 / 0.055);
+  --grid-line-soft: rgb(245 247 251 / 0.04);
+  --route-line: rgb(245 247 251 / 0.24);
+  --route-beam: #dbeafe;
+  --on-slate: #f8fafc;
+  --terminal: #05070a;
+  --terminal-deep: #020304;
+  --terminal-text: #e8fff1;
+  --terminal-muted: #9fb0bd;
+  --terminal-accent: #86efac;
+  --terminal-border: rgb(255 255 255 / 0.12);
+  --terminal-soft: rgb(255 255 255 / 0.045);
+  --line: #27313d;
+  --line-strong: #3a4655;
+  --blue: #4aa8ff;
+  --blue-soft: #102236;
+  --green: #4ade80;
+  --green-soft: #13251b;
+  --red: #f87171;
+  --red-soft: #2b171a;
+  --amber: #fbbf5c;
+  --amber-soft: #2a1d0d;
+  --slate: #05070a;
+  --steel: #9aa6b2;
+  --shadow-soft: 0 10px 28px rgb(0 0 0 / 0.28);
+  --shadow-panel: 0 14px 34px rgb(0 0 0 / 0.34);
+}

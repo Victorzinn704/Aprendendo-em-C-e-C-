@@ -1,0 +1,14 @@
+Build C - evidencia local
+Data: 2026-06-16
+Sistema: Windows / PowerShell
+Compilador: TinyCC 0.9.27 local
+Comando:
+.\scripts\build-all.ps1 -CCompiler <tcc.exe> -WarningsAsErrors
+
+Resultado:
+OK  ex01_clinica.exe  7168 bytes
+OK  ex02_suporte_ti.exe  6656 bytes
+OK  ex04_escalonamento.exe  6656 bytes
+OK  ex05_rede_pacotes.exe  7168 bytes
+
+Observacao: a trilha C++ foi ignorada nesta maquina porque nao havia compilador C++ no PATH.
