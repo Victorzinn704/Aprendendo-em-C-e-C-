@@ -30,3 +30,7 @@ npm run build
 - nao versionar binarios de build;
 - manter entradas e screenshots sem dados reais;
 - atualizar README/docs quando mudar comando, fluxo ou evidencia visual.
+
+## Fluxo Git e revisão
+
+Siga também o [fluxo de issues, branches, commits e pull requests](CONTRIBUTING-GIT.md).
